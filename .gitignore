@@ -1,0 +1,8 @@
+*.odt
+*.lof
+*.log
+*.lot
+*.out
+*.aux
+*.toc
+**/*.odt

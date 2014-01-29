@@ -1,0 +1,139 @@
+% Compilar con xelatex
+% Generar rtf con latex2rtf TFGandrea.tex
+% apt-get install texlive texlive-lang-spanish texlive-latex-extra texlive-xetex
+\documentclass[a4paper,11pt]{scrbook} % tipo del documento: scrbook, amsbook, book, article
+
+%% Paquetes necesarios para la correcta compilación
+%\usepackage[latin1]{inputenc} % usar caracteres raros como ñ á é ¿ etc
+\usepackage[spanish]{babel} % español
+
+\usepackage{array} %Use the package array and specify the font just after the \begin{tabular}
+\usepackage[
+	pdfauthor={Andrea Ubis Moreno},
+	pdftitle={Burbujas económicas - Trabajo Fin de Grado},
+	pdfsubject={Burbujas económicas},
+	pdfkeywords={Comportamiento de manada, exuberancia irracional, colapso, crisis financiera, burbuja, especulación, Herding, irrational exhuberance, crash, financial crisis, bubbles, speculation},
+	pdfproducer={XeLateX with hyperref},
+	pdfcreator={Xelatex}
+]{hyperref} % Usar enlaces en bibliografía, web, etc. y metadata
+\usepackage{lmodern,textcomp} % permite usar €
+\usepackage{graphicx} % Usa gráficos desde pdf
+\usepackage{pdfpages} % Añade páginas en pdf
+
+\usepackage{amsmath} % Use gather in math formulas
+
+\usepackage{tocbibind} % Add bibliography to table of contents
+
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry} % Cambia los margenes
+
+\usepackage{chngcntr} % No reiniciar el contador de figuras o tablas en capítulos
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+%% Putas fuentes del señor decano
+\usepackage{fontspec} % Cambiar fuente por defecto
+\setmainfont{Liberation Sans}
+\usepackage{setspace} % Interlineado (line spacing)
+\setstretch{1.15}
+\makeatletter
+\renewcommand\huge{\@setfontsize\huge{24pt}{24}}
+\renewcommand\Large{\@setfontsize\Large{18pt}{18}}
+\renewcommand\large{\@setfontsize\large{14pt}{14}}
+\makeatother
+\setkomafont{chapter}{\huge\mdseries}
+\setkomafont{section}{\Large\mdseries}
+\setkomafont{subsection}{\large\mdseries}
+
+
+%% Información sin relevancia
+\title{Burbujas económicas - Trabajo Fin de Grado}
+\author{Andrea Ubis Moreno}
+
+
+            
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Empieza el documento                                   %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagenumbering{roman}
+%% Añadimos la portada externa
+\includepdf{portada/portada}
+
+%\cleardoublepage %Dos páginas en blanco
+
+\section*{Copyright}
+El poseedor de esta obra tiene permiso para copiar, distribuir y/o modificar todos los contenidos de este documento bajo los términos de la licencia \emph{Creative Commons Attribution-NonCommercial-ShareAlike 4.0}. Es posible encontrar una copia de esta licencia en \url{http://creativecommons.org/licenses/by-nc-sa/4.0/}
+
+En esta obra se han utilizado imágenes de dominio público o licenciadas bajo Creative Commons. En las imágenes de terceros, se ha reconocido su autoría según se indicaba en donde fueron recogidas.
+
+Obra realizada por \emph{Dña. Andrea Ubis Moreno} con colaboración del \emph{Dr. Juan Pintos Clapés}.
+
+Copias de esta obra y el texto fuente de la misma se pueden encontrar en \url{https://github.com/}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Comenzamos                                             %%
+\frontmatter                                              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{./capitulos/resumen}
+
+
+\tableofcontents
+
+\listoffigures
+\listoftables
+
+\chapter{Introducción}
+
+\input{./capitulos/intro.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Capitulos                                              %%
+\mainmatter                                               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{¿Qué es una burbuja económica?}
+\input{./capitulos/cap1.tex}
+
+\chapter{Tulipomanía}
+
+\input{./capitulos/cap2.tex}
+
+\chapter{La burbuja de la Compañía del Mississippi}
+\input{./capitulos/cap3.tex}
+
+
+\chapter{La burbuja de la Compañía de los Mares del Sur}
+\input{./capitulos/cap4.tex}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Finalizamos                                              %%
+\backmatter                                               %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Conclusiones}
+\input{./capitulos/conclusiones.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliografia                                           %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{./capitulos/bibliografia.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Anexos                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{./capitulos/anexos.tex}
+
+
+\end{document}
